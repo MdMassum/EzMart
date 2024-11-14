@@ -2,7 +2,6 @@ import axios from "axios";
 import { useCallback, useState } from "react";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
 import Button from "../../components/Button";
 import Input from "../../components/Input";
 import LoadingModal from "../../components/loading";
@@ -13,7 +12,6 @@ import { AuthResponse } from "../../types";
 type Variant = 'LOGIN' | 'REGISTER';
 
 const AuthForm = () => {
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [variant, setVariant] = useState<Variant>('LOGIN');
     const [loading, setLoading] = useState<boolean>(false);

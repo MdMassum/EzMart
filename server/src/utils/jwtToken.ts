@@ -5,7 +5,7 @@ import { Response } from "express";
 
 const sendToken = (user: any, statusCode: number, res: Response) => {
 
-    const token = jwt.sign({ id: user._id, email:user.email, role:user.role }, process.env.JWT_SECRET as string, {
+    const token = jwt.sign({ id: user._id}, process.env.JWT_SECRET as string, {
         expiresIn: process.env.JWT_EXPIRE,
     });
 
