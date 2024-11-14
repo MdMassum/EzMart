@@ -1,7 +1,6 @@
 import React, { ReactElement } from 'react'
 import { Navigate, useLocation } from 'react-router-dom'
 import { User } from '../../types';
-import toast from 'react-hot-toast';
 
 interface CheckAuthProps{
     isAuthenticated : boolean,

@@ -4,3 +4,9 @@ export interface User {
     role?:string,
     age?:number
 }
+
+export interface AuthResponse {
+    success: boolean;
+    message?: string;
+    user?: any;  
+}

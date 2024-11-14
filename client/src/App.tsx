@@ -14,14 +14,19 @@ import ShoppingCheckOut from './pages/shopping-view/checkout'
 import Account from './pages/shopping-view/account'
 import CheckAuth from './components/common/check-auth'
 import UnAuthPage from './pages/unauth-page'
+import { Toaster } from 'react-hot-toast'
+import { useSelector } from 'react-redux'
 
 function App() {
 
-  const isAuthenticated = true;
-  const user = null;
-
+  const {isAuthenticated, user} = useSelector((state:any)=>state.auth)
+  console.log(isAuthenticated)
+  console.log(user)
   return (
     <BrowserRouter>
+      <div>
+          <Toaster position="top-center" reverseOrder={false} />
+      </div>
       <Routes>
 
         <Route path='/login' element={

@@ -9,7 +9,7 @@ const Auth:React.FC = () => {
         <div
         className="sm:mx-auto sm:w-full sm:max-w-md">
 
-            <h2 className="font-robotoSerif mt-1 text-center text-4xl font-bold tracking-tight text-gray-900">Sign In </h2>
+            <h2 className="font-robotoSerif mt-1 text-center text-4xl font-bold tracking-tight text-gray-900">Sign In To EzMart</h2>
         </div> 
 
         {/* authform */}
