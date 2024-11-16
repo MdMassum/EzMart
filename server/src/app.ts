@@ -2,9 +2,10 @@ import express from 'express'
 import cookieParser from 'cookie-parser';
 import cors from 'cors'
 import errorMiddleware from './middleware/error';
-import authRouter from './routes/authRoutes'
 import helmet from 'helmet';
 import rateLimit from 'express-rate-limit';
+import authRouter from './routes/authRoutes'
+import productRouter from './routes/productRoutes'
 
 
 const app = express();
@@ -36,6 +37,7 @@ app.use(cookieParser());
 // routes
 
 app.use('/api/auth',authRouter)
+app.use('/api/product',productRouter)
 
 // error check 
 app.use(errorMiddleware)

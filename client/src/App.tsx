@@ -26,7 +26,7 @@ function App() {
   let {isAuthenticated, user} = useSelector((state:any)=>state.auth)
   // const dispatch = useDispatch();
   // useEffect(() => {
-  //   // dispatch(signOutSuccess());
+  //   dispatch(signOutSuccess());
   //   console.log()
   // }, [])
   

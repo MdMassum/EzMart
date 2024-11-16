@@ -73,8 +73,15 @@ const ProductForm = () => {
         if (imageUrls.length > 0) {
             data.images = imageUrls;
         }
-        console.log(data);
-        // Submit the form data to your server or API here.
+        try {
+            await axios.post(`${import.meta.env.VITE_SERVER_URL}/api/product/create`,data,{withCredentials:true})
+            toast.success("Product Created Successfully")
+
+        } catch (error:any) {
+            const errorMsg = error?.response?.data?.message || "An error occurred";
+            toast.error(errorMsg);
+        }
+        
     };
 
     return (
