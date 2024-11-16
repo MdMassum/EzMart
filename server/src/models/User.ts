@@ -1,7 +1,14 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Schema} from "mongoose";
 import validator from 'validator'
 
-const UserSchema = new mongoose.Schema({
+export interface IUser extends Document{
+    name: string;
+    email: string;
+    password: string;
+    role:string;
+  }
+
+const UserSchema : Schema = new mongoose.Schema<IUser>({
     name : {
         type : String,
         required : true,
@@ -27,6 +34,6 @@ const UserSchema = new mongoose.Schema({
 
 },{timestamps : true})
 
-const User = mongoose.model('User',UserSchema);
+const User = mongoose.model<IUser>('User',UserSchema);
 
 export default User;

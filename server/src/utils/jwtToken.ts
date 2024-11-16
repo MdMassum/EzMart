@@ -17,9 +17,9 @@ const sendToken = (user: any, statusCode: number, res: Response) => {
         secure: process.env.NODE_ENV === "production"
     };
 
-    res.status(statusCode).cookie("token", token, options).json({
+    res.status(statusCode).cookie("access_token", token, options).json({
         success: true,
-        token,
+        access_token : token,
         user:{
             id:user._id,
             email:user.email,

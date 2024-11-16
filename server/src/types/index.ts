@@ -1,9 +1,8 @@
-import { Request } from "express";
-import IUser from "../models/User"; // Make sure this path points to your User model's interface
+import { IUser } from "../models/User";
 
 declare module "express-serve-static-core" {
   interface Request {
-    user?: typeof IUser | null; // Assuming you have a IUser interface, otherwise use 'any' or the correct type
+    user: IUser | null;
   }
 
   interface JWTClaims {
@@ -15,3 +14,4 @@ declare module "express-serve-static-core" {
     jti: string;           // JWT ID for token identification
   }
 }
+

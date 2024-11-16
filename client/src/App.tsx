@@ -5,7 +5,7 @@ import AdminLayout from './components/admin-view/AdminLayout'
 import AdminDashboard from './pages/admin-view/dashboard'
 import AdminFeatures from './pages/admin-view/features'
 import AdminOrders from './pages/admin-view/orders'
-import AdminProducts from './pages/admin-view/products'
+import AdminProducts from './pages/admin-view/AdminProducts'
 import ShoppingLayout from './components/shopping-view/layout'
 import NotFound from './pages/not-found'
 import ShoppingHome from './pages/shopping-view/home'
@@ -15,13 +15,22 @@ import Account from './pages/shopping-view/account'
 import CheckAuth from './components/common/check-auth'
 import UnAuthPage from './pages/unauth-page'
 import { Toaster } from 'react-hot-toast'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { signOutSuccess } from './redux/authSlice.ts'
+
+
 
 function App() {
 
-  const {isAuthenticated, user} = useSelector((state:any)=>state.auth)
-  console.log(isAuthenticated)
-  console.log(user)
+  let {isAuthenticated, user} = useSelector((state:any)=>state.auth)
+  // const dispatch = useDispatch();
+  // useEffect(() => {
+  //   // dispatch(signOutSuccess());
+  //   console.log()
+  // }, [])
+  
+  
   return (
     <BrowserRouter>
       <div>

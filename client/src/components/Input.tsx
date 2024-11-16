@@ -1,5 +1,3 @@
-'use client'
-
 import clsx from "clsx"  // used for writing dynamic classes in tailwind
 import { FieldErrors, FieldValues, UseFormRegister } from "react-hook-form"
 

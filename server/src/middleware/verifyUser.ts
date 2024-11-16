@@ -6,9 +6,9 @@ import User from "../models/User";
 
 
 
-const verifyAuth = asyncHandler(async(req:Request, res:Response, next:NextFunction) =>{
+const verifyAuth = asyncHandler(async(req:any, res:Response, next:NextFunction) =>{
 
-    const token = req.cookies.token;
+    const token = req.cookies.access_token;
     if (!token) {
         return next(new ErrorHandler("Unauthorized Access", 401));
     }

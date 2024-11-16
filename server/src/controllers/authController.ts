@@ -50,16 +50,34 @@ export const loginUser = asyncHandler(async(
     sendToken(user, 200, res);
 })
 
+// get authenticated user (useful if page is refreshed)
+// export const getAuthUser = asyncHandler(async(
+//     req:any,
+//     res:Response,
+//     next:NextFunction
+// ) =>{
+    
+//     const user = req.user;
+
+//     res.status(200).json({
+//         success:true,
+//         message:"Authenticated User",
+//         user
+//     })
+// })
+
 // logout
 export const logoutUser = asyncHandler(async(
     req:Request,
     res:Response,
     next:NextFunction) =>{
 
-        res.cookie("token",null,{
-            expires: new Date(Date.now()),
-            httpOnly: true,
-        })
+        res.clearCookie('token');
+
+        // res.cookie("access_token",null,{
+        //     expires: new Date(Date.now()),
+        //     httpOnly: true,
+        // })
         res.status(200).json({
             success:true,
             message:"Logged Out Succeccfully"
